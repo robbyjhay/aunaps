@@ -41,7 +41,11 @@ To provide a safe, stimulating, and inclusive environment where every child’s 
 
 ## Screenshots
 
-
+# Home Page
 ![Homepage Screenshot](/images/screenshots/home.jpeg)
+
+# About Us Page
 ![Aboutpage Screenshot](/images/screenshots/about.jpeg)
+
+# Admission Page
 ![Admissionpage Screenshot](/images/screenshots/admission.jpeg)
