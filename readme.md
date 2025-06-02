@@ -4,7 +4,7 @@
 
 Experience the AUNAPS official website live! Click the link below to visit the deployed project:
 
-[**Visit AUNAPS Official Website**](https://robbyjhay.github.io/aunaps/index.html)
+[**Visit AUNAPS Official Website**](https://robbyjhay.github.io/aunaps/)
 
 ## Project Overview
 
