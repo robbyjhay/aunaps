@@ -1,0 +1,1673 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* declaring my variables for future purpose*/
+:root {
+    --primary-color: #4B0049; /* purple */
+    --secondary-color: #3F90F7; /* blue */
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --white: #ffffff;
+    --black: #000;
+}
+
+body {
+    font-family: Poppins, sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color); /* I'm using one of my variables */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Used for flexible layouts within containers */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space out items */
+}
+
+/* Reusable Section Titles and Tags */
+.section-tag {
+    font-size: 14px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.section-tag.center-tag {
+    text-align: center;
+    width: 100%; /* Important for centering in flex containers */
+    margin-bottom: 5px; /* Adjust spacing */
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--text-color); /* Using variable */
+    margin-top: 0;
+    margin-bottom: 40px; /* Space below title */
+    line-height: 1.3;
+}
+
+.section-title.center-title {
+    text-align: center;
+    width: 100%; /* Important for centering in flex containers */
+}
+
+.section-title.light-text {
+    color: var(--white); /* For titles on dark backgrounds */
+}
+
+
+/* Top Contact Bar Styles */
+.top-contact-bar {
+    background-color: var(--secondary-color); /* Light gray background */
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--white);
+    border-bottom: 3px solid var(--primary-color);
+    position: fixed; /* Fixed position for top bar */
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+.top-contact-bar .contact-info{
+    width: 110%;
+}
+
+.top-contact-bar .contact-info span {
+    margin-right: none; 
+}
+
+
+
+.top-contact-bar .contact-info i {
+    margin-right: 5px;
+    color: var(--white); /* Matching brand color */
+}
+
+/* Header / Navigation Bar Styles */
+.main-header {
+    background-color: var(--white); /* Using variable */
+    padding: 15px 0; /*space from the top screen to this section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.404);
+    border-bottom: 3px solid var(--primary-color);
+    position: fixed; /* Fixed position for sticky header */
+    width: 100%;
+    margin-top: 2rem;
+    z-index: 1000; /* this ensures it stays above other content */
+}
+
+.main-header .container {
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 30px;
+    color: var(--primary-color); /* Using variable */
+    margin: 0;
+    font-weight: bold;
+}
+.logo a {
+    text-decoration: none;
+}
+
+.main-nav ul {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    display: flex;
+    color: var(--secondary-color);
+}
+
+.main-nav ul li {
+    position: relative;
+    margin-right: 25px;
+    color: var(--primary-color);
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-color); /* Using variable */
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover, 
+.main-nav ul li a.active {
+    color: var(--secondary-color);
+    font-weight: bold;
+   /* text-decoration: underline; */
+    
+}
+
+.main-nav .dropdown i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* Dropdown Menu Specific Styles */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: var(--white); /* Using variable */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.473);
+    z-index: 10; /* Ensure it appears above other content */
+    border-top: 3px solid var(--primary-color);
+    border-radius: 0 0 5px 5px;
+    padding: 12px 0; /* Add padding inside dropdown */
+}
+
+.dropdown-content a {
+    color: var(--text-color); 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: var(--secondary-color); /* purple text on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show the dropdown menu on hover */
+}
+
+.e-portal-btn {
+    background-color: var(--secondary-color); /* Used secondary color for portal button */
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.e-portal-btn:hover {
+    background-color: #327ac6; /* Slightly darker secondary on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 700px; /* Adjust height as needed */
+    background-image: url('https://charterhouselagos.com/wp-content/uploads/2025/01/Untitled-design-28-1-1536x960.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    /* overflow: hidden; */
+    margin-top: 20rem 0; /* Space below the header */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    /* border-top: 200px; */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.5s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color); 
+    transform: translateY(-2px);
+    animation: pulse 1s infinite; /* Add pulse animation */
+    transition: calc(0.5s + 0.2s) ease; /* Adjust transition timing */
+}
+.large-apply-btn {
+     display: inline-block;
+     padding: 18px 48px;
+     font-size: 1.3rem;
+     background: var(--secondary-color);
+     color: var(--white);
+     border: none;
+     border-radius: 8px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-top: 18px;
+     box-shadow: 0 4px 16px rgba(46,49,146,0.12);
+     transition: background 0.2s, transform 0.2s;
+     cursor: pointer;
+     text-align: center;
+     text-decoration: none;
+}
+
+.large-apply-btn:hover {
+     background: var(--primary-color);
+     transform: translateY(-2px) scale(1.04);
+ }
+
+/* About Us and Admission Section Styles */
+.about-admission-section {
+    padding: 150px 0;
+    background-color: var(--background-color);
+}
+
+.about-admission-section .content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+    /* text-align: justify; */
+}
+
+.about-admission-section .content-grid p {
+    text-align: justify;
+}
+
+/* Admission Section Styles */
+.admission-section {
+    background-color: var(--white); /* Using variable */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.admission-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.admission-header h3 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.admission-header h4 {
+    margin: 10px 0 0;
+    font-size: 20px;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+
+/* .admission-buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}  */
+.admission-buttons a {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2px;
+    text-decoration: none;
+}
+
+.admission-btn {
+    background-color: #eee;
+    color: var(--text-color); /* Using variable */
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: left;
+}
+
+.admission-btn a{
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+.admission-btn:hover,
+.admission-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.admission-features {
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-top: 1px solid #eee;
+}
+
+.admission-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admission-features ul li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.admission-features ul li i {
+    color: #28a745; /* Green checkmark - kept as is, often a standard color */
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.admission-features ul .btn :active{
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.admission-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.admission-images img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* About Us Content Styles */
+.about-us-content {
+    padding: 0;
+}
+
+.about-us-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.about-us-content ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
+.about-us-content ul li:before {
+    content: '\2022';
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Our Facility Section Styles */
+.facility-section {
+    padding: 150px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.facility-section .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.facility-item {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.facility-item:hover {
+    transform: translateY(-5px);
+}
+
+.facility-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.facility-item:hover .facility-image img {
+    transform: scale(1.05);
+}
+
+.facility-content {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 25px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.facility-content h3 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.facility-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Fun Facts/Counter Section Styles */
+.fun-facts-section {
+    background-color: var(--primary-color);
+    padding: 60px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.fun-facts-section .fun-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fun-fact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fun-fact-item i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.fun-fact-item .counter {
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.fun-fact-item .plus-sign {
+    font-size: 40px;
+    font-weight: bold;
+    vertical-align: super;
+    display: inline-block;
+    margin-left: -5px;
+}
+
+.fun-fact-item p {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+/* Blog Section Styles */
+.blog-section {
+    padding: 150px 0;
+    background-color: var(--background-color);
+}
+
+.blog-section .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.blog-post-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post-item:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-post-item:hover .blog-post-image img {
+    transform: scale(1.05);
+}
+
+.blog-post-content {
+    padding: 25px;
+}
+
+.blog-post-content h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--text-color); /* Using variable */
+    line-height: 1.3;
+}
+
+.blog-post-content p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 13px;
+    color: #777;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+}
+
+.blog-meta i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+/* Upcoming Birthdays Section Styles */
+.upcoming-birthdays-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.upcoming-birthdays-section .birthday-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.birthday-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.birthday-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.birthday-details {
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.birthday-details h3 {
+    font-size: 30px;
+    color: var(--text-color); /* Using variable */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.birthday-details .month {
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.birthday-details .names {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Contact Information & Admission Form Section Styles */
+.contact-admission-form-section {
+    padding: 150px 0;
+    background-color: #eee; /* Light gray background - kept as is for subtle contrast */
+}
+
+.contact-admission-form-section .contact-admission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Adjust column width ratio */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-info-column {
+    background-color: var(--white); /* Using variable */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info-column h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Using variable */
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-detail i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    padding-top: 5px; /* Align icon with text visually */
+}
+
+.contact-detail h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+}
+
+.contact-detail b {
+    font-weight: bolder;
+}
+
+.contact-detail p {
+    margin: 5px 0 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.school-description {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.school-description h4 {
+    font-size: 18px;
+    color: var(--text-color); /* Using variable */
+    margin-bottom: 10px;
+}
+
+.school-description p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Existing admission form styles within contact section */
+.admission-form-column {
+    background-color: var(--primary-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--white);
+}
+
+.admission-form-column h3 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--white);
+}
+
+.admission-form .form-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.admission-form .form-group.full-width {
+    gap: 0; /* No gap for full-width elements */
+}
+
+.admission-form input[type="text"],
+.admission-form input[type="email"],
+.admission-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    color: var(--white);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.admission-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.admission-form input::placeholder,
+.admission-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-admission-submit {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: auto; /* Allow button to size itself */
+    display: block; /* Make it a block element to control width/margin */
+    margin: 0 auto; /* Center the button */
+}
+
+.btn-admission-submit:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color); /* Darker shade of primary for hover */
+}
+
+
+/* Meet Our Team Section Styles */
+.team-section {
+    padding: 120px 0;
+    background-color: var(--background-color); /* Light background */
+    text-align: center;
+}
+
+.team-section .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for team members */
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.team-member {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-image {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed height for team photos */
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team-image .social-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color); /* Used secondary color for social links */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    transform: translateY(100%); /* Start off-screen */
+    transition: transform 0.3s ease-out;
+}
+
+.team-member:hover .social-links {
+    transform: translateY(0); /* Slide up on hover */
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f0f0f0; /* Slightly lighter white on hover */
+}
+
+.team-info {
+    padding: 20px;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.team-info h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Using variable */
+}
+
+.team-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Testimonial Section Styles */
+.testimonial-section {
+    padding: 120px 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.testimonial-section .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for testimonials */
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.testimonial-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    color: var(--text-color); /* Dark text for readability on light background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    position: relative;
+}
+
+.testimonial-item .quote-icon {
+    font-size: 40px;
+    color: var(--secondary-color); /* Used secondary color for quote icon */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.2; /* Make it subtle */
+    z-index: 0; /* Ensure text is on top */
+}
+
+.testimonial-item p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-top: 30px; /* Space for the quote icon */
+    margin-bottom: 0;
+    position: relative; /* Position text above the quote icon */
+    z-index: 1;
+    text-align: justify;
+}
+
+.testimonial-item h4 {
+    text-align: right;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: #222; /* Dark background */
+    color: #f0f0f0; /* Light text color */
+    padding: 150px 0 20px;
+    font-size: 15px;
+}
+
+.main-footer .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive columns */
+    gap: 30px;
+    align-items: flex-start; /* Align columns to the top */
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color); /* Using primary color for underline */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the top */
+}
+
+.footer-col ul li i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    font-size: 16px;
+    line-height: 1.6; /* Match line-height of text */
+}
+
+.footer-col ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-col .footer-social-links {
+    margin-top: 25px;
+}
+
+.footer-col .footer-social-links a {
+    color: var(--white);
+    font-size: 18px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-col .footer-social-links a:hover {
+    color: var(--secondary-color); /* Secondary color for social link hover */
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.newsletter input[type="text"],
+.newsletter input[type="email"] {
+    background-color: #333;
+    border: 1px solid #555;
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.newsletter input::placeholder {
+    color: #bbb;
+}
+
+.newsletter button {
+    background-color: var(--secondary-color); /* Using secondary color for newsletter button */
+    color: var(--white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #327ac6; /* Slightly darker secondary on hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color); /* Used secondary color for scroll to top button */
+    color: var(--white);
+    cursor: pointer;
+    padding: 15px 18px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--secondary-color); /* Slightly darker secondary on hover */
+    transform: translateY(-3px);
+}
+
+
+/* Specific styles for the apply page */
+.apply-hero-section {
+    padding: 120px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.6)), url('https://charterhouselagos.com/wp-content/uploads/2024/12/site-photo-1.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+}
+
+.apply-hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.apply-hero-section p {
+    font-size: 1.2em;
+}
+
+.admission-details-section {
+    padding: 60px 0;
+    background-color: var(--background-color); /* Using variable for consistency */
+}
+
+.admission-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* More flexible grid */
+    gap: 40px;
+    /* Removed display: flex; align-items: center; justify-content: space-between; as they are handled by the grid */
+    /* Adjust container padding to 0 and remove it from the .container definition to allow grid items to span full width */
+    padding: 0 20px; /* Add padding to the container for this section */
+    margin: 0 auto; /* Center the grid */
+    max-width: 1200px; /* Match main container width */
+}
+
+.admission-process, .admission-requirements, .fee-structure {
+    background-color: var(--white); /* Using variable for consistency */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admission-process h3, .admission-requirements h3, .fee-structure h3 {
+    color: var(--secondary-color); /* Using secondary color for headings */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.admission-process ol, .admission-requirements ul, .fee-structure ul {
+    list-style-position: outside; /* Changed to outside for better alignment with longer text */
+    padding-left: 20px; /* Added padding for list items */
+}
+
+.admission-process li, .admission-requirements li, .fee-structure li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--text-color); /* Ensure text color is consistent */
+}
+
+.admission-requirements li i {
+    color: #28a745; /* Green checkmark */
+    margin-right: 10px;
+}
+
+.fee-structure ul {
+    list-style: none;
+    padding-left: 0; /* Remove default padding for custom list */
+}
+
+.fee-structure ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.fee-structure ul li:last-child {
+    border-bottom: none;
+}
+
+/* Overriding and refining contact-admission-form-section for apply page */
+.admission-form-section { /* Renamed from .contact-admission-form-section */
+    padding: 120px 0;
+    background-color: var(--background-color); /* Consistent background */
+}
+
+.admission-form-section .container {
+    display: block; /* Override container flex for this section */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the form */
+    padding: 0 20px; /* Maintain padding */
+}
+
+.admission-form-column {
+    background-color: var(--white); /* White background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: var(--text-color); /* Dark text for the form fields */
+}
+
+.admission-form-column h3 {
+    color: var(--text-color); /* Dark text for form title */
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.admission-form .form-group {
+    display: grid; /* Use grid for form fields */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.admission-form .form-group.full-width {
+    grid-template-columns: 1fr; /* Full width for single fields */
+    gap: 0; /* No gap needed for full width */
+}
+
+.admission-form input[type="text"],
+.admission-form input[type="email"],
+.admission-form input[type="tel"], /* Added for phone number input type */
+.admission-form select,
+.admission-form textarea,
+.admission-form input[type="date"],
+.admission-form input[type="file"] { /* Added file input */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    background-color: var(--white); /* Ensure white background for inputs */
+    color: var(--text-color); /* Ensure dark text color for inputs */
+}
+
+.admission-form input[type="file"] {
+    padding: 8px 10px; /* Slightly less padding for file input */
+}
+
+.admission-form select {
+    appearance: none; /* Remove default select arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23222222"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+.admission-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.admission-form input::placeholder,
+.admission-form textarea::placeholder {
+    color: #999; /* Darker placeholder for light background inputs */
+}
+
+.admission-form label {
+    display: block; /* this ensures the labels are on their own line */
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.admission-form button.btn-admission-submit {
+    background-color: var(--primary-color); 
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Make button full width */
+    width: 100%;
+}
+
+.admission-form button.btn-admission-submit:hover {
+    background-color: var(--secondary-color); 
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; /* Keeps logo and nav on opposite sides */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Example background */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Displays navigation items horizontally */
+    align-items: center;
+}
+
+.main-nav ul li {
+    position: relative; /* Needed for dropdown positioning */
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #007bff; /* Example hover/active color */
+}
+
+/* Dropdown specific styles (keep your existing ones) */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* --- Hamburger Icon Styling (Hidden on desktop) --- */
+.nav-toggle {
+    display: none; /* Hide on larger screens initially */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px; /* Width of the hamburger icon */
+    height: 20px; /* Height of the hamburger icon */
+    position: relative;
+    z-index: 20; /* Ensure it's above other elements */
+}
+
+.hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color); /* Color of the hamburger lines */
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease; /* Smooth transition for animation */
+}
+
+.hamburger:nth-child(1) {
+    top: 0;
+}
+
+.hamburger:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger:nth-child(3) {
+    bottom: 0;
+}
+
+/* Hamburger to 'X' animation when active */
+.nav-toggle.active .hamburger:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .hamburger:nth-child(2) {
+    opacity: 0; /*Hide middle bar */
+}
+
+.nav-toggle.active .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- Media Queries --- */
+
+/* For screens up to 992px, adjust grid columns */
+@media (max-width: 992px) {
+    .main-header,
+    .about-admission-section .content-grid,
+    .upcoming-birthdays-section .birthday-content-grid,
+    .contact-admission-form-section .contact-admission-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .admission-section,
+    .about-us-content,
+    .contact-info-column,
+    .admission-form-column {
+        padding: 20px;
+    }
+
+    .admission-images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .facility-grid,
+    .blog-grid,
+    .team-grid,
+    .testimonial-grid,
+    .main-footer .footer-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for cards */
+    }
+
+    .fun-facts-section .fun-facts-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    /* Adjust dropdown position for smaller screens if needed */
+    .dropdown-content {
+        position: static; /* Remove absolute positioning */
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px; /* Indent dropdown items */
+        background-color: var(--secondary-color); /* A different background for sub-items */
+        display: none; /* Ensure it's hidden by default, JS will toggle */
+    }
+
+    .main-nav ul li a.active + .dropdown-content,
+    .main-nav ul li.dropdown.active .dropdown-content {
+        display: flex; /* Show dropdown content when parent li has 'active' class */
+        flex-direction: column;
+    }
+
+    /* Admission page specific responsiveness */
+    .admission-details-grid {
+        grid-template-columns: 1fr;
+    }
+    .admission-form .form-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Consolidated Media Query for max-width: 768px (Mobile) */
+@media (max-width: 768px) {
+
+    .main-header .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* This ensures elements are pushed to ends */
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        /* On small screens, logo is at the start (left) */
+        order: 1; /* LOGO IS NOW FIRST */
+        flex-grow: 1; /* Allows logo to take remaining space if needed */
+        text-align: left; /* Aligns logo content to the left */
+        line-height: 0; /* Remove extra space below image if any */
+    }
+
+    .logo img {
+        max-height: 40px; /* Adjust as needed for mobile */
+        width: auto;
+    }
+    .logo h1 {
+        font-size: 1.5em; /* Adjust font size for mobile */
+        display: inline-block; /* Helps with alignment next to image */
+        vertical-align: middle; /* Align with image */
+        margin: 0; /* Remove default margins */
+        padding-left: 5px; /* Space between logo and name */
+    }
+
+
+    .nav-toggle {
+        display: block; /* Show hamburger on small screens */
+        order: 2; /* HAMBURGER IS NOW SECOND (right side) */
+    }
+
+    .main-nav {
+        flex-basis: 100%; /* Navigation takes full width below the header row */
+        order: 3; /* Navigation appears third (below logo and toggle) */
+    }
+
+    .main-nav ul.nav-menu {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack vertically */
+        width: 100%;
+        background-color: #f9f9f9;
+        border-top: 1px solid #eee;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        padding: 10px 0;
+        margin-top: 0; /* Remove any top margin from desktop styles */
+    }
+
+    .main-nav ul.nav-menu.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-nav ul.nav-menu li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav ul.nav-menu li a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav ul.nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Adjust dropdown behavior for mobile */
+    .dropdown .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #f0f0f0;
+        padding: 0;
+        display: none;
+    }
+
+    .dropdown-content a {
+        padding-left: 40px;
+        font-size: 0.95em;
+    }
+
+    /* Rest of your mobile-specific styles for other sections */
+    .main-nav ul { /* This specific rule was conflicting with .nav-menu */
+        margin-top: 0;
+    }
+
+    .main-nav ul li {
+        margin-bottom: 0;
+    }
+
+    .hero-content h2 { font-size: 36px; }
+    .hero-content p { font-size: 16px; }
+    .admission-header h3 { font-size: 24px; }
+    .admission-header h4 { font-size: 18px; }
+    .about-us-content h2, .section-title { font-size: 30px; }
+    .facility-content { height: auto; }
+    .fun-fact-item i { font-size: 40px; }
+    .fun-fact-item .counter { font-size: 45px; }
+    .fun-fact-item .plus-sign { font-size: 30px; }
+    .fun-fact-item p { font-size: 16px; }
+    .blog-post-content h3 { font-size: 20px; }
+    .birthday-details h3 { font-size: 24px; }
+    .contact-info-column h2 { font-size: 28px; }
+    .admission-form-column h3 { font-size: 24px; }
+    .admission-form .form-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .team-info h3 { font-size: 20px; }
+    .team-info p { font-size: 15px; }
+    .testimonial-item p { font-size: 16px; }
+    .apply-hero-section h2 { font-size: 2.5em; }
+    .apply-hero-section p { font-size: 1em; }
+}
+
+@media (max-width: 480px) {
+    .admission-images { grid-template-columns: 1fr; }
+    .admission-images img { height: auto; }
+    .btn { padding: 12px 20px; font-size: 16px; }
+    .facility-grid, .blog-grid, .team-grid, .testimonial-grid, .main-footer .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .fun-facts-section .fun-facts-grid { grid-template-columns: 1fr; }
+    .footer-col h3::after { left: 50%; transform: translateX(-50%); }
+    .footer-col ul li i { line-height: normal; }
+}
