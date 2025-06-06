@@ -7,7 +7,7 @@ function sendMail() {
         message : document.getElementById("message").value,
     };
     emailjs.send("service_sj2i7s9", "template_2t1mnwn", templateParams)
-    .then(() => alert("Your message has been sent successfully!").catch(() => alert("Your message not sent, try again!")));
+    .then(() => alert("Your reques ahs been sen successfully and ").catch(() => alert("Your message not sent, try again!")));
 }
 
 
